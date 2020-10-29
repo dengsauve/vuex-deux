@@ -1,24 +1,19 @@
 # Vue Deux
 
-## Project setup
-```
-npm install
-```
+A task manager for your life
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+I was recently inspired by a HN post where someone made a vanilla js clone of the app Teux Deux.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+So here's a clone in Vue.
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Improvements
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+I actually think Teux Deux is pretty perfect. However, I do have a few add ons in mind
+
+- [ ] I would like to be able to have notes attached to days
+- [ ] I would like to be able to search everything (fuzzy matching)
+
+## Key Carry Overs
+
+- [ ] Tri-part layout of menu|calendar|misc. lists top to bottom
+- [ ] Unfinished or incomplete tasks roll over to the next day 
