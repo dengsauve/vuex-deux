@@ -5,23 +5,34 @@
 
     <div class="container-fluid">
 
-      <div class="row">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Monday</h5>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Hate the day</li>
-            <li class="list-group-item">Nap</li>
-            <li class="list-group-item">Bake Lasagna</li>
-            <li class="list-group-item">Eat lasagna before Jon gets home!</li>
-          </ul>
-        </div>
+      <div class="row flex-row flex-nowrap card-holder">
+
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+        <ListCard/>
+
       </div>
 
       <Navigation add="true"/>
 
-      <div class="row">
+      <div class="row flex-row flex-nowrap card-holder">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">Monday</h5>
@@ -46,10 +57,11 @@
 
 import Navigation from "@/components/Navigation";
 import FooterBar from "@/FooterBar";
+import ListCard from "@/ListCard";
 
 export default {
   name: 'App',
-  components: {FooterBar, Navigation}
+  components: {ListCard, FooterBar, Navigation}
 }
 </script>
 
@@ -59,6 +71,14 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+.card-holder {
+  overflow-x: scroll;
+}
+
+.card-holder::-webkit-scrollbar {
+  display: none;
 }
 
 </style>
