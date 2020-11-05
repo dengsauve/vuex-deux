@@ -4,8 +4,14 @@
       <h5 class="card-title">Monday</h5>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Hate the day</li>
-      <li class="list-group-item">Nap</li>
+      <li class="list-group-item">
+        <div class="grab"></div>
+        Hate the day
+      </li>
+      <li class="list-group-item">
+        <div class="grab"></div>
+        Nap
+      </li>
       <li class="list-group-item">Bake Lasagna</li>
       <li class="list-group-item">Eat lasagna before Jon gets home!</li>
     </ul>
