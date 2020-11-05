@@ -1,7 +1,9 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <span class="text-muted">Made with ❤ by <a href="https://twitter.com/dengsauve">Dennis Sauve</a>.</span>
+      <span class="text-muted">
+        Made with ❤ by <a href="https://github.com/dengsauve" target="_blank">Dennis Sauvé</a>
+      </span>
     </div>
   </footer>
 </template>
