@@ -7,7 +7,6 @@
 
             <div class="row flex-row flex-nowrap card-holder">
 
-                <ListCard v-for="day in days" :name="day.name" :today="day.isToday" :key="day.id"/>
                 <ListCard v-for="day in days" :day="day" :key="day.id"/>
 
             </div>
@@ -56,14 +55,24 @@
         mounted() {
             // need to get the first initial 7 days?
             const today = new Date();
-            for (let i = today.getDay(); i < today.getDay() + 8; i++) {
-                console.log(i);
+            let counter = 0;
+            for (let i = today.getDay() - 1; i < today.getDay() + 8; i++) {
                 const day = i % 7;
+
+                let date = new Date();
+                date.setDate(today.getDate() + counter);
+                let dateString = date.getFullYear() +
+                    '-' + date.getMonth() +
+                    '-' + date.getDate();
+
                 this.days.push({
                     id: i,
                     name: this.$store.state.days[day],
                     isToday: i === today.getDay(),
-                })
+                    date: dateString
+                });
+
+                counter++;
             }
         }
     }
