@@ -22,10 +22,3 @@ export default {
   name: 'ListCard'
 }
 </script>
-<style>
-.card {
-  min-height: 300px;
-  min-width: 300px!important;
-  margin-right: 5px;
-}
-</style>
