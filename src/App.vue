@@ -8,6 +8,7 @@
             <div class="row flex-row flex-nowrap card-holder">
 
                 <ListCard v-for="day in days" :name="day.name" :today="day.isToday" :key="day.id"/>
+
             </div>
 
         </div>
@@ -19,13 +20,13 @@
             <div class="row flex-row flex-nowrap card-holder">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Monday</h5>
+                        <h5 class="card-title">Custom List</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Hate the day</li>
-                        <li class="list-group-item">Nap</li>
-                        <li class="list-group-item">Bake Lasagna</li>
-                        <li class="list-group-item">Eat lasagna before Jon gets home!</li>
+                        <li class="list-group-item">Custom item #1</li>
+                        <li class="list-group-item">Custom item #2</li>
+                        <li class="list-group-item">Custom item #3</li>
+                        <li class="list-group-item">Custom item #4</li>
                     </ul>
                 </div>
             </div>
@@ -39,13 +40,13 @@
 
 <script>
 
-    import Navigation from "@/components/Navigation";
-    import FooterBar from "@/FooterBar";
-    import ListCard from "@/ListCard";
+    import Navigation from "./components/Navigation";
+    import FooterBar from "./FooterBar";
+    import ListCard from "./ListCard";
 
     export default {
         name: 'App',
-        components: {ListCard, FooterBar, Navigation}
+        components: {ListCard, FooterBar, Navigation},
         data: function () {
             return {
                 days: []
