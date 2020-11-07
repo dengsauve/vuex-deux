@@ -11,12 +11,7 @@
     display: inline-block;
 }
 
-.grab {
-    align-self: center;
-    width: 1em;
-    height: 1em;
-    background-image: var(--grab);
-    display: inline-block;
+.grabbable {
     cursor: grab;
 }
 
