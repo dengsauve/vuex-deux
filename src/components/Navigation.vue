@@ -5,7 +5,7 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-    <a v-if="add">+ Add Note</a>
+    <button class="btn btn-outline-secondary" v-if="add">+ Add List</button>
   </nav>
 </template>
 <script>
