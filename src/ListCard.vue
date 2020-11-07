@@ -13,13 +13,21 @@
                        tag="ul"
                        class="list-group list-group-flush"
             >
-                <li class="list-group-item"
+                <li class="list-group-item grabbable"
                     v-for="task in list"
                     :key="task.name"
                 >
-                    <div class="grab"></div>
-                    <del v-if="task.completed">{{ task.name }}</del>
-                    <span v-else>{{ task.name }}</span>
+                    <del v-if="task.completed" @click="task.completed = !task.completed">
+                        {{ task.name }}
+                    </del>
+
+                    <span @click="remove(task)"  v-if="task.completed">
+                        <TrashCan/>
+                    </span>
+
+                    <span v-else @click="task.completed = !task.completed">
+                        {{ task.name }}
+                    </span>
                 </li>
             </draggable>
 
@@ -38,9 +46,10 @@
 </template>
 <script>
     import draggable from 'vuedraggable';
+    import TrashCan from "./TrashCan";
 
     export default {
-        components: {draggable},
+        components: {TrashCan, draggable},
         computed: {
             list: {
                 get: function () {
@@ -69,6 +78,10 @@
                     completed: false,
                 });
                 this.newTask = '';
+            },
+            remove: function (task) {
+                const taskIndex = this.list.findIndex(t => t.name === task.name);
+                this.list.splice(taskIndex, 1);
             }
         }
     }
