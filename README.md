@@ -4,7 +4,7 @@
 
 I was recently inspired by a HN post where someone made a vanilla js clone of the app Teux Deux.
 
-So here's a clone in Vue.
+So here's a clone in Vue. I created this using Vue, Vuex, and VueDraggable. 
 
 This is the front-end portion only, which I'm going to using in Laravel
 
