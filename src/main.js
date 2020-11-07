@@ -30,13 +30,28 @@ const store = new Vuex.Store({
                 completed: true,
             },
             {
+                date: '2020-10-5',
+                name: 'Thirsty Thursday',
+                completed: true,
+            },
+            {
                 date: '2020-10-6',
                 name: 'Frost Beverage Friday',
                 completed: true,
             },
             {
+                date: '2020-10-6',
+                name: 'French Fry Friday',
+                completed: true,
+            },
+            {
                 date: '2020-10-7',
                 name: 'Frost Beverage Saturday',
+                completed: false,
+            },
+            {
+                date: '2020-10-7',
+                name: 'Solid Saturday',
                 completed: false,
             },
             {
