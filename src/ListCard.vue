@@ -18,7 +18,8 @@
                     :key="task.name"
                 >
                     <div class="grab"></div>
-                    {{ task.name }}
+                    <del v-if="task.completed">{{ task.name }}</del>
+                    <span v-else>{{ task.name }}</span>
                 </li>
             </draggable>
 
