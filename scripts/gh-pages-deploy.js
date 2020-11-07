@@ -1,3 +1,4 @@
+/* for ref: https://blog.logrocket.com/build-deploy-vue-js-app-github-pages/ */
 /* eslint-disable no-console */
 const execa = require("execa");
 const fs = require("fs");
