@@ -64,6 +64,36 @@ const store = new Vuex.Store({
                 name: 'Frosty Beverage Monday',
                 completed: false,
             },
+        ],
+        lists: [
+            {
+                id: 1,
+                name: 'Custom List',
+                tasks: [
+                    {
+                        name: 'Custom Item #1',
+                        completed: false,
+                    },
+                    {
+                        name: 'Custom Item #2',
+                        completed: false,
+                    },
+                ]
+            },
+            {
+                id: 2,
+                name: 'Moving List',
+                tasks: [
+                    {
+                        name: 'Pack Up',
+                        completed: false,
+                    },
+                    {
+                        name: 'Apartment Inspection',
+                        completed: false,
+                    },
+                ]
+            }
         ]
     },
     mutations: {

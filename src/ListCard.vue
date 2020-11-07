@@ -6,7 +6,7 @@
             <h5 class="card-title">{{ day.name }}
                 <small v-if="day.isToday">(today)</small>
             </h5>
-            {{ day.id }}
+            <span v-if="showdate">{{ day.id }}</span>
 
             <draggable :list="list"
                        group="tasks"
@@ -64,6 +64,7 @@
         name: 'ListCard',
         props: [
             'day',
+            'showdate'
         ],
         data: function () {
             return {

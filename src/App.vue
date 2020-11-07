@@ -5,7 +5,7 @@
 
         <div class="container-fluid">
             <div class="row flex-row flex-nowrap card-holder">
-                <ListCard v-for="day in days" :day="day" :key="day.id"/>
+                <ListCard v-for="day in days" :day="day" :key="day.id" :showdate="true"/>
             </div>
         </div>
 
@@ -14,17 +14,7 @@
         <div class="container-fluid">
 
             <div class="row flex-row flex-nowrap card-holder">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Custom List</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Custom item #1</li>
-                        <li class="list-group-item">Custom item #2</li>
-                        <li class="list-group-item">Custom item #3</li>
-                        <li class="list-group-item">Custom item #4</li>
-                    </ul>
-                </div>
+                <ListCard v-for="list in lists" :day='list' :key="list.id" :showdate="false"/>
             </div>
 
         </div>
@@ -47,6 +37,7 @@
         computed: {
             ...mapState([
                 'tasks',
+                'lists'
             ]),
         },
         data: function () {
