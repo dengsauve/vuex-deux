@@ -39,7 +39,7 @@
                     Add
                 </button>
             </div>
-            <input type="text" class="form-control" v-model="newTask">
+            <input type="text" class="form-control" v-model="newTask" @keyup.enter="add">
         </div>
 
     </div>
@@ -73,12 +73,14 @@
         },
         methods: {
             add: function () {
-                this.list.push({
-                    date: this.day.id,
-                    name: this.newTask,
-                    completed: false,
-                });
-                this.newTask = '';
+                if (this.newTask.length > 0) {
+                    this.list.push({
+                        date: this.day.id,
+                        name: this.newTask,
+                        completed: false,
+                    });
+                    this.newTask = '';
+                }
             },
             remove: function (task) {
                 const taskIndex = this.list.findIndex(t => t.name === task.name);
