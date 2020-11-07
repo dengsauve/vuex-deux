@@ -22,7 +22,7 @@ export default {
   methods: {
     addList: function () {
       this.$store.state.lists.push({
-        id: this.$store.state.lists.length,
+        id: this.$store.state.lists.length + 1,
         name: 'New List',
         tasks: [],
       })
