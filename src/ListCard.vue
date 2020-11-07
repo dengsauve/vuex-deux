@@ -24,6 +24,15 @@
 
         </div>
 
+        <div class="input-group card-footer">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" @click="add">
+                    Add
+                </button>
+            </div>
+            <input type="text" class="form-control" v-model="newTask">
+        </div>
+
     </div>
 </template>
 <script>
@@ -45,6 +54,21 @@
         name: 'ListCard',
         props: [
             'day',
-        ]
+        ],
+        data: function () {
+            return {
+                newTask: '',
+            }
+        },
+        methods: {
+            add: function () {
+                this.list.push({
+                    date: this.day.id,
+                    name: this.newTask,
+                    completed: false,
+                });
+                this.newTask = '';
+            }
+        }
     }
 </script>
