@@ -2,6 +2,8 @@
 
 *A task manager for your life*
 
+[Live Demo](https://dengsauve.github.io/vuex-deux/)
+
 I was recently inspired by a HN post where someone made a vanilla js clone of the app Teux Deux.
 
 So here's a clone in Vue. 
