@@ -26,7 +26,7 @@ const store = new Vuex.Store({
         tasks: [
             {
                 date: '2020-10-5',
-                name: 'Frost Beverage Thursday',
+                name: 'Frosty Beverage Thursday',
                 completed: true,
             },
             {
@@ -36,7 +36,7 @@ const store = new Vuex.Store({
             },
             {
                 date: '2020-10-6',
-                name: 'Frost Beverage Friday',
+                name: 'Frosty Beverage Friday',
                 completed: true,
             },
             {
@@ -46,7 +46,7 @@ const store = new Vuex.Store({
             },
             {
                 date: '2020-10-7',
-                name: 'Frost Beverage Saturday',
+                name: 'Frosty Beverage Saturday',
                 completed: false,
             },
             {
@@ -56,12 +56,12 @@ const store = new Vuex.Store({
             },
             {
                 date: '2020-10-8',
-                name: 'Frost Beverage Sunday',
+                name: 'Frosty Beverage Sunday',
                 completed: false,
             },
             {
                 date: '2020-10-9',
-                name: 'Frost Beverage Monday',
+                name: 'Frosty Beverage Monday',
                 completed: false,
             },
         ]
