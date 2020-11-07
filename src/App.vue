@@ -5,7 +5,11 @@
 
         <div class="container-fluid">
             <div class="row flex-row flex-nowrap card-holder">
-                <ListCard v-for="day in days" :day="day" :key="day.id" :showdate="true"/>
+                <ListCard v-for="day in days"
+                          :day="day"
+                          :key="day.id"
+                          :showdate="true"
+                          :custom="false"/>
             </div>
         </div>
 
@@ -14,7 +18,11 @@
         <div class="container-fluid">
 
             <div class="row flex-row flex-nowrap card-holder">
-                <ListCard v-for="list in lists" :day='list' :key="list.id" :showdate="false"/>
+                <ListCard v-for="list in lists"
+                          :day='list'
+                          :key="list.id"
+                          :showdate="false"
+                          :custom="true"/>
             </div>
 
         </div>

@@ -3,7 +3,7 @@
 
     <div class="card-body">
 
-      <h5 class="card-title" v-if="!editing" @click="setupEdit(day.name)">
+      <h5 class="card-title" v-if="!editing" @click="custom ? setupEdit(day.name) : null">
         {{ day.name }}
         <small v-if="day.isToday">(today)</small>
       </h5>
@@ -74,7 +74,8 @@ export default {
   name: 'ListCard',
   props: [
     'day',
-    'showdate'
+    'showdate',
+    'custom',
   ],
   data: function () {
     return {
