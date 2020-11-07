@@ -1,10 +1,12 @@
-# Vue Deux
+# Vuex Deux
 
-A task manager for your life
+*A task manager for your life*
 
 I was recently inspired by a HN post where someone made a vanilla js clone of the app Teux Deux.
 
 So here's a clone in Vue.
+
+This is the front-end portion only, which I'm going to using in Laravel
 
 ## Improvements
 
@@ -13,7 +15,10 @@ I actually think Teux Deux is pretty perfect. However, I do have a few add ons i
 - [ ] I would like to be able to have notes attached to days
 - [ ] I would like to be able to search everything (fuzzy matching)
 
-## Key Carry Overs
+## Installation
 
-- [ ] Tri-part layout of menu|calendar|misc. lists top to bottom
-- [ ] Unfinished or incomplete tasks roll over to the next day 
+1. Clone the repo
+2. `npm i`
+3. `npm run serve`
+
+Have fun!
