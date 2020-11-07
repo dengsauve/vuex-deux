@@ -4,11 +4,9 @@
         <Navigation title="Vue Deux" searchbar="true"/>
 
         <div class="container-fluid">
-
             <div class="row flex-row flex-nowrap card-holder">
                 <ListCard v-for="day in days" :day="day" :key="day.id"/>
             </div>
-
         </div>
 
         <Navigation add="true"/>
@@ -64,7 +62,8 @@
                 const today = new Date();
                 let counter = 0;
 
-                for (let i = today.getDay() - 1; i < today.getDay() + 8; i++) {
+                const startDay = today.getDay() - 1;
+                for (let i = startDay; i < today.getDay() + 8; i++) {
                     const day = i % 7;
 
                     let date = new Date();
@@ -77,7 +76,7 @@
                         id: dateString,
                         name: this.$store.state.days[day],
                         isToday: i === today.getDay(),
-                        tasks: this.tasks.filter(task => task.date === dateString),
+                        tasks: this.tasks.filter(t => t.date === dateString),
                     });
 
                     counter++;
