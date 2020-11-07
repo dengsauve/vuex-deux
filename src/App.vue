@@ -6,9 +6,7 @@
         <div class="container-fluid">
 
             <div class="row flex-row flex-nowrap card-holder">
-
                 <ListCard v-for="day in days" :day="day" :key="day.id"/>
-
             </div>
 
         </div>
@@ -43,36 +41,47 @@
     import Navigation from "./components/Navigation";
     import FooterBar from "./FooterBar";
     import ListCard from "./ListCard";
+    import {mapState} from 'vuex';
 
     export default {
         name: 'App',
         components: {ListCard, FooterBar, Navigation},
+        computed: {
+            ...mapState([
+                'tasks',
+            ]),
+        },
         data: function () {
             return {
                 days: []
             }
         },
         mounted() {
-            // need to get the first initial 7 days?
-            const today = new Date();
-            let counter = 0;
-            for (let i = today.getDay() - 1; i < today.getDay() + 8; i++) {
-                const day = i % 7;
+            this.createDaysList();
+        },
+        methods: {
+            createDaysList: function () {
+                const today = new Date();
+                let counter = 0;
 
-                let date = new Date();
-                date.setDate(today.getDate() + counter);
-                let dateString = date.getFullYear() +
-                    '-' + date.getMonth() +
-                    '-' + date.getDate();
+                for (let i = today.getDay() - 1; i < today.getDay() + 8; i++) {
+                    const day = i % 7;
 
-                this.days.push({
-                    id: i,
-                    name: this.$store.state.days[day],
-                    isToday: i === today.getDay(),
-                    date: dateString
-                });
+                    let date = new Date();
+                    date.setDate(today.getDate() - 1 + counter);
+                    let dateString = date.getFullYear() +
+                        '-' + date.getMonth() +
+                        '-' + date.getDate();
 
-                counter++;
+                    this.days.push({
+                        id: dateString,
+                        name: this.$store.state.days[day],
+                        isToday: i === today.getDay(),
+                        tasks: this.tasks.filter(task => task.date === dateString),
+                    });
+
+                    counter++;
+                }
             }
         }
     }

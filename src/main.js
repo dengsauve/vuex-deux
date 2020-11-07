@@ -14,7 +14,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-        days:{
+        days: {
             0: 'Sunday',
             1: 'Monday',
             2: 'Tuesday',
@@ -22,7 +22,34 @@ const store = new Vuex.Store({
             4: 'Thursday',
             5: 'Friday',
             6: 'Saturday',
-        }
+        },
+        tasks: [
+            {
+                date: '2020-10-5',
+                name: 'Frost Beverage Thursday',
+                completed: true,
+            },
+            {
+                date: '2020-10-6',
+                name: 'Frost Beverage Friday',
+                completed: true,
+            },
+            {
+                date: '2020-10-7',
+                name: 'Frost Beverage Saturday',
+                completed: false,
+            },
+            {
+                date: '2020-10-8',
+                name: 'Frost Beverage Sunday',
+                completed: false,
+            },
+            {
+                date: '2020-10-9',
+                name: 'Frost Beverage Monday',
+                completed: false,
+            },
+        ]
     },
     mutations: {
         //

@@ -40,3 +40,12 @@
     min-width: 300px !important;
     margin-right: 5px;
 }
+
+.list-group.list-group-flush {
+    max-height: 25vh;
+    overflow-y: scroll;
+}
+
+.list-group-item {
+    padding-left: 0;
+}
