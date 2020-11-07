@@ -1,7 +1,7 @@
 <template>
     <div id="app">
 
-        <Navigation title="Vue Deux" searchbar="true"/>
+        <Navigation title="Vuex Deux" searchbar="true"/>
 
         <div class="container-fluid">
             <div class="row flex-row flex-nowrap card-holder">
