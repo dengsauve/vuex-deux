@@ -35,7 +35,6 @@
 <script>
 
     import Navigation from "./components/Navigation";
-    import FooterBar from "./FooterBar";
     import ListCard from "./ListCard";
     import {mapState} from 'vuex';
 
@@ -82,6 +81,7 @@
                 }
             }
         }
+import FooterBar from "./components/FooterBar";
     }
 </script>
 
