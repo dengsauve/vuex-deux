@@ -35,7 +35,7 @@
             <TrashCan/>
           </span>
 
-          <span v-else @click="task.completed = !task.completed">
+          <span v-else @click="toggleCompletion(task)">
             {{ task.name }}
           </span>
         </li>
@@ -104,7 +104,7 @@ export default {
       }
     },
     toggleCompletion: function (task) {
-      task.completed = !task.completed;
+      this.$store.dispatch('toggleCompletion', task);
     },
     remove: function (task) {
       this.$store.dispatch('removeTask', task);

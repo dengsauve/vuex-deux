@@ -53,10 +53,16 @@ const store = new Vuex.Store({
             state.tasks.push(payload);
             this.commit('persistTasks');
         },
+        updateTask(state, payload) {
+            console.log(payload);
+            state.tasks.splice(payload[0], 1, payload[1]);
+            this.commit('persistTasks');
+        },
         deleteTask(state, payload) {
             state.tasks.splice(payload, 1);
             this.commit('persistTasks');
         },
+        
         persistTasks(state) {
             const parsed = JSON.stringify(state.tasks);
             localStorage.setItem('tasks', parsed);
@@ -72,6 +78,11 @@ const store = new Vuex.Store({
         removeTask: function (context, payload) {
             const taskIndex = context.state.tasks.findIndex(t => t.name === payload.name);
             context.commit('deleteTask', taskIndex);
+        },
+        toggleCompletion: function(context, payload) {
+            payload.completed = !payload.completed;
+            const taskIndex = context.state.tasks.findIndex(t => t.name === payload.name);
+            context.commit('updateTask', [taskIndex, payload]);
         },
 
         loadTasks: function (context) {
