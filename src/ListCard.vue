@@ -87,7 +87,7 @@ export default {
   methods: {
     add: function () {
       if (this.newTask.length > 0) {
-        this.list.push({
+        this.$store.dispatch('addNewTask', {
           date: this.day.id,
           name: this.newTask,
           completed: false,
