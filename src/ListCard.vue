@@ -27,17 +27,17 @@
             v-for="task in list"
             :key="task.name"
         >
-          <del v-if="task.completed" @click="task.completed = !task.completed">
+          <del v-if="task.completed" @click="toggleCompletion(task)">
             {{ task.name }}
           </del>
 
           <span @click="remove(task)" v-if="task.completed">
-                        <TrashCan/>
-                    </span>
+            <TrashCan/>
+          </span>
 
           <span v-else @click="task.completed = !task.completed">
-                        {{ task.name }}
-                    </span>
+            {{ task.name }}
+          </span>
         </li>
       </draggable>
 
@@ -45,11 +45,15 @@
 
     <div class="input-group card-footer">
       <div class="input-group-prepend">
-        <button class="btn btn-outline-secondary" @click="add">
+        <button :disabled="locked" class="btn btn-outline-secondary" @click="add">
           Add
         </button>
       </div>
-      <input type="text" class="form-control" v-model="newTask" @keyup.enter="add">
+      <input :disabled="locked"
+             type="text"
+             class="form-control"
+             v-model="newTask"
+             @keyup.enter="add">
     </div>
 
   </div>
@@ -79,6 +83,7 @@ export default {
     'day',
     'showdate',
     'custom',
+    'locked'
   ],
   data: function () {
     return {
@@ -98,9 +103,11 @@ export default {
         this.newTask = '';
       }
     },
+    toggleCompletion: function (task) {
+      task.completed = !task.completed;
+    },
     remove: function (task) {
-      const taskIndex = this.list.findIndex(t => t.name === task.name);
-      this.list.splice(taskIndex, 1);
+      this.$store.dispatch('removeTask', task);
     },
     setupEdit: function (currentTitle) {
       this.editing = true;

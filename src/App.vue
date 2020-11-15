@@ -5,10 +5,11 @@
 
     <div class="container-fluid">
       <div class="row flex-row flex-nowrap card-holder">
-        <ListCard v-for="day in calendar"
+        <ListCard v-for="(day, index) in calendar"
                   :day="day"
                   :key="day.id"
                   :showdate="true"
+                  :locked="index===0"
                   :custom="false"/>
       </div>
     </div>
@@ -22,6 +23,7 @@
                   :day='list'
                   :key="list.id"
                   :showdate="false"
+                  :locked="false"
                   :custom="true"/>
       </div>
 

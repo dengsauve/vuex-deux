@@ -51,9 +51,13 @@ const store = new Vuex.Store({
     mutations: {
         storeNewTask(state, payload) {
             state.tasks.push(payload);
-            let day = state.calendar.find(d => d.id === payload.date);
-            if (day)
-                day.tasks.push(payload);
+            this.commit('persistTasks');
+        },
+        deleteTask(state, payload) {
+            state.tasks.splice(payload, 1);
+            this.commit('persistTasks');
+        },
+        persistTasks(state) {
             const parsed = JSON.stringify(state.tasks);
             localStorage.setItem('tasks', parsed);
         }
@@ -65,6 +69,11 @@ const store = new Vuex.Store({
         addNewTask: function ({commit}, payload) {
             commit('storeNewTask', payload);
         },
+        removeTask: function (context, payload) {
+            const taskIndex = context.state.tasks.findIndex(t => t.name === payload.name);
+            context.commit('deleteTask', taskIndex);
+        },
+
         loadTasks: function (context) {
             if (localStorage.tasks)
                 context.state.tasks = JSON.parse(localStorage.tasks);
