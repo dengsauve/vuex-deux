@@ -11,8 +11,20 @@ I created this using [Vue](https://vuejs.org/),
  [Vuex](https://vuex.vuejs.org/),
  [VueDraggable](https://github.com/SortableJS/Vue.Draggable), 
  and [Bootstrap](https://getbootstrap.com/). 
-
 This is the front-end portion only, which I'm going to using in Laravel
+
+## Usage
+
+If you follow the Live Demo link, all data will be kept in browser local storage. As is, this is a suitable todo list
+provided that you don't change machines.
+
+## Key Features
+
+- [x] Add and delete tasks
+- [x] Mark tasks as completed/incomplete
+- [ ] Task rollover
+- [x] Create custom task list
+- [x] Rename custom task lists
 
 ## Improvements
 
