@@ -56,7 +56,7 @@
 </template>
 <script>
 import draggable from 'vuedraggable';
-import TrashCan from "./TrashCan";
+import TrashCan from "./components/TrashCan";
 
 export default {
   components: {TrashCan, draggable},
