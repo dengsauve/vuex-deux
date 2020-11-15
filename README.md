@@ -18,6 +18,7 @@ This is the front-end portion only, which I'm going to using in Laravel
 
 I actually think Teux Deux is pretty perfect. However, I do have a few add ons in mind
 
+- [x] Serverless, data will persist in browser
 - [ ] I would like to be able to have notes attached to days
 - [ ] I would like to be able to search everything (fuzzy matching)
 
