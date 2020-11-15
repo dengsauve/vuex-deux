@@ -24,76 +24,27 @@ const store = new Vuex.Store({
             6: 'Saturday',
         },
         tasks: [
-            {
-                date: '2020-10-5',
-                name: 'Frosty Beverage Thursday',
-                completed: true,
-            },
-            {
-                date: '2020-10-5',
-                name: 'Thirsty Thursday',
-                completed: true,
-            },
-            {
-                date: '2020-10-6',
-                name: 'Frosty Beverage Friday',
-                completed: true,
-            },
-            {
-                date: '2020-10-6',
-                name: 'French Fry Friday',
-                completed: true,
-            },
-            {
-                date: '2020-10-7',
-                name: 'Frosty Beverage Saturday',
-                completed: false,
-            },
-            {
-                date: '2020-10-7',
-                name: 'Solid Saturday',
-                completed: false,
-            },
-            {
-                date: '2020-10-8',
-                name: 'Frosty Beverage Sunday',
-                completed: false,
-            },
-            {
-                date: '2020-10-9',
-                name: 'Frosty Beverage Monday',
-                completed: false,
-            },
+            // {
+            //     date: '2020-10-5',
+            //     name: 'Frosty Beverage Thursday',
+            //     completed: true,
+            // },
         ],
         lists: [
-            {
-                id: 1,
-                name: 'Custom List',
-                tasks: [
-                    {
-                        name: 'Custom Item #1',
-                        completed: false,
-                    },
-                    {
-                        name: 'Custom Item #2',
-                        completed: false,
-                    },
-                ]
-            },
-            {
-                id: 2,
-                name: 'Moving List',
-                tasks: [
-                    {
-                        name: 'Pack Up',
-                        completed: false,
-                    },
-                    {
-                        name: 'Apartment Inspection',
-                        completed: false,
-                    },
-                ]
-            }
+            // {
+            //     id: 1,
+            //     name: 'Custom List',
+            //     tasks: [
+            //         {
+            //             name: 'Custom Item #1',
+            //             completed: false,
+            //         },
+            //         {
+            //             name: 'Custom Item #2',
+            //             completed: false,
+            //         },
+            //     ]
+            // },
         ]
     },
     mutations: {
