@@ -69,7 +69,7 @@ export default {
 
         let date = new Date();
         date.setDate(today.getDate() - 1 + counter);
-        let dateString = date.getFullYear() +
+        const dateString = date.getFullYear() +
             '-' + date.getMonth() +
             '-' + date.getDate();
 
@@ -77,7 +77,7 @@ export default {
           id: dateString,
           name: this.$store.state.days[day],
           isToday: i === today.getDay(),
-          tasks: this.tasks.filter(t => t.date === dateString),
+          // tasks: this.tasks.filter(t => t.date === dateString),
         });
 
         counter++;

@@ -63,11 +63,14 @@ export default {
   computed: {
     list: {
       get: function () {
-        return this.day.tasks
+        // return this.day.tasks
+        return this.$store.state.tasks.filter(t => t.date === this.day.id);
       },
       set: function (value) {
         // Add any change logic (maybe vuex action) here
-        this.day.tasks = value;
+        // this.day.tasks = value;
+        console.log(value);
+        return;
       }
     }
   },
