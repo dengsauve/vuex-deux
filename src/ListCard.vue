@@ -116,10 +116,28 @@ export default {
       this.newTask = '';
     },
     toggleCompletion: function (task) {
-      this.$store.dispatch('toggleCompletion', task);
+      if (this.custom) {
+        this.updateCustomCompletion(task);
+      } else {
+        this.$store.dispatch('toggleCompletion', task);
+      }
+    },
+    updateCustomCompletion: function (task) {
+      const taskIndex = this.day.tasks.findIndex(t => t === task);
+      this.day.tasks[taskIndex].completed = !this.day.tasks[taskIndex].completed;
+      this.$store.dispatch('updateList', this.day);
     },
     remove: function (task) {
-      this.$store.dispatch('removeTask', task);
+      if (this.custom) {
+        this.removeCustom(task);
+      } else {
+        this.$store.dispatch('removeTask', task);
+      }
+    },
+    removeCustom: function (task) {
+      const taskIndex = this.day.tasks.findIndex(t => t === task);
+      this.day.tasks.splice(taskIndex, 1);
+      this.$store.dispatch('updateList', this.day);
     },
     setupEdit: function (currentTitle) {
       this.editing = true;
