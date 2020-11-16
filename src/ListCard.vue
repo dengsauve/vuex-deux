@@ -67,7 +67,9 @@ export default {
   computed: {
     list: {
       get: function () {
-        // return this.day.tasks
+        if (this.custom)
+          return this.day.tasks;
+
         return this.$store.state.tasks.filter(t => t.date === this.day.id);
       },
       set: function (value) {
@@ -94,14 +96,24 @@ export default {
   },
   methods: {
     add: function () {
-      if (this.newTask.length > 0) {
+      if (this.newTask.length < 1)
+        return;
+
+      if (this.custom) {
+        console.log('customadd reached');
+        this.day.tasks.push({
+          name: this.newTask,
+          completed: false
+        });
+        this.$store.dispatch('updateList', this.day);
+      } else {
         this.$store.dispatch('addNewTask', {
           date: this.day.id,
           name: this.newTask,
           completed: false,
         });
-        this.newTask = '';
       }
+      this.newTask = '';
     },
     toggleCompletion: function (task) {
       this.$store.dispatch('toggleCompletion', task);
@@ -126,6 +138,7 @@ export default {
     },
     saveName: function () {
       this.day.name = this.titleString;
+      this.$store.dispatch('renameList', this.day);
       this.finishEditing();
     },
   }
