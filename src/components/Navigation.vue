@@ -21,11 +21,11 @@ export default {
   ],
   methods: {
     addList: function () {
-      this.$store.state.lists.push({
+      this.$store.dispatch('addList', {
         id: this.$store.state.lists.length + 1,
         name: 'New List',
         tasks: [],
-      })
+      });
     }
   }
 }

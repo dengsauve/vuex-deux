@@ -62,10 +62,19 @@ const store = new Vuex.Store({
             state.tasks.splice(payload, 1);
             this.commit('persistTasks');
         },
+
+        createList(state, payload) {
+            state.lists.push(payload);
+            this.commit('persistLists');
+        },
         
         persistTasks(state) {
             const parsed = JSON.stringify(state.tasks);
             localStorage.setItem('tasks', parsed);
+        },
+        persistLists(state) {
+            const parsed = JSON.stringify(state.lists);
+            localStorage.setItem('lists', parsed);
         }
     },
     getters: {
@@ -83,6 +92,10 @@ const store = new Vuex.Store({
             payload.completed = !payload.completed;
             const taskIndex = context.state.tasks.findIndex(t => t.name === payload.name);
             context.commit('updateTask', [taskIndex, payload]);
+        },
+
+        addList: function (context, payload) {
+            this.commit('createList', payload);
         },
 
         loadTasks: function (context) {
