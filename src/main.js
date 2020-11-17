@@ -98,6 +98,10 @@ const store = new Vuex.Store({
             const taskIndex = context.state.tasks.findIndex(t => t.name === payload.name);
             context.commit('updateTask', [taskIndex, payload]);
         },
+        updateTask: function(context, payload) {
+            const taskIndex = context.state.tasks.findIndex(t => t.name === payload.name);
+            context.commit('updateTask', [taskIndex, payload]);
+        },
 
         addList: function (context, payload) {
             this.commit('createList', payload);

@@ -58,6 +58,8 @@ export default {
     this.$store.dispatch('loadTasks');
     this.$store.dispatch('loadLists');
 
+    this.taskRollover();
+
     this.createCalendar();
   },
   methods: {
@@ -84,7 +86,23 @@ export default {
 
         counter++;
       }
-    }
+    },
+    /**
+     * Iterate through all of the tasks that aren't complete
+     *  If there are any old ones, set the date to today's date string
+     *  Make sure to update the task
+     */
+    taskRollover: function () {
+      const date = new Date();
+      const dateString = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate();
+      const dateTimeString = dateString + ' 00:00';
+      this.$store.state.tasks.filter(t => t.completed === false).forEach(task => {
+        if (new Date(task.date + ' 00:00') < new Date(dateTimeString)) {
+          task.date = dateString;
+          this.$store.dispatch('updateTask', task);
+        }
+      });
+    },
   }
 }
 </script>
