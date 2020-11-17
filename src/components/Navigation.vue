@@ -6,9 +6,14 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" disabled>Search</button>
     </form>
 
+    <button class="btn btn-outline-secondary" v-if="toggleable" @click="toggleDrawer">
+      Toggle Drawer
+    </button>
+
     <button class="btn btn-outline-secondary" v-if="add" @click="addList">
       + Add List
     </button>
+
   </nav>
 </template>
 <script>
@@ -18,6 +23,7 @@ export default {
       'title',
       'searchbar',
       'add',
+      'toggleable'
   ],
   methods: {
     addList: function () {
@@ -26,6 +32,9 @@ export default {
         name: 'New List',
         tasks: [],
       });
+    },
+    toggleDrawer: function () {
+      this.$store.state.drawerOpen = !this.$store.state.drawerOpen;
     }
   }
 }

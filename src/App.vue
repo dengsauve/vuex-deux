@@ -14,9 +14,9 @@
       </div>
     </div>
 
-    <Navigation add="true"/>
+    <Navigation add="true" toggleable="true"/>
 
-    <div class="container-fluid">
+    <div class="container-fluid" v-if="this.$store.state.drawerOpen">
       <div class="row flex-row flex-nowrap card-holder">
         <ListCard v-for="list in lists"
                   :day='list'

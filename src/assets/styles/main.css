@@ -39,7 +39,7 @@
 }
 
 .list-group.list-group-flush {
-    max-height: 25vh;
+    max-height: 60vh;
     overflow-y: scroll;
 }
 

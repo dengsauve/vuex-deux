@@ -46,7 +46,8 @@ const store = new Vuex.Store({
             //         },
             //     ]
             // },
-        ]
+        ],
+        drawerOpen: false,
     },
     mutations: {
         storeNewTask(state, payload) {
