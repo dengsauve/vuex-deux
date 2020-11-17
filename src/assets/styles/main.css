@@ -33,11 +33,13 @@
 .card {
     min-height: 300px;
     min-width: 300px !important;
+    width: 24vw !important;
+    flex-shrink: 0; /* <-- P.I.T.A. */
     margin-right: 5px;
 }
 
 .list-group.list-group-flush {
-    max-height: 20vh;
+    max-height: 25vh;
     overflow-y: scroll;
 }
 

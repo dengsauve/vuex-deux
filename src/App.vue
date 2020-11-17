@@ -17,7 +17,6 @@
     <Navigation add="true"/>
 
     <div class="container-fluid">
-
       <div class="row flex-row flex-nowrap card-holder">
         <ListCard v-for="list in lists"
                   :day='list'
@@ -26,7 +25,6 @@
                   :locked="false"
                   :custom="true"/>
       </div>
-
     </div>
 
     <FooterBar/>
