@@ -70,7 +70,8 @@ export default {
         if (this.custom)
           return this.day.tasks;
 
-        return this.$store.state.tasks.filter(t => t.date === this.day.id);
+        return this.$store.state.tasks.filter(t => t.date === this.day.id)
+            .sort((y, x) => (x.completed === y.completed) ? 0 : x.completed? -1 : 1);
       },
       set: function (value) {
         // Add any change logic (maybe vuex action) here
