@@ -22,7 +22,7 @@ provided that you don't change machines.
 
 - [x] Add and delete tasks
 - [x] Mark tasks as completed/incomplete
-- [ ] Task rollover
+- [x] Task rollover
 - [ ] Drag 'n' Drop to move tasks
 - [x] Create custom task list
 - [x] Rename custom task lists
