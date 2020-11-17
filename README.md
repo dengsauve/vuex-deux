@@ -31,6 +31,8 @@ provided that you don't change machines.
 I actually think Teux Deux is pretty perfect. However, I do have a few add ons in mind
 
 - [x] Serverless, data will persist in browser
+- [ ] Make custom list section as a drawer, with the option to close.
+- [ ] Only show yesterday, today, then the next two days, allowing for more line width
 - [ ] I would like to be able to have notes attached to days
 - [ ] I would like to be able to search everything (fuzzy matching)
 
